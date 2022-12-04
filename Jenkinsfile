@@ -5,11 +5,9 @@ node() {
     }
     
     stage('getnodes') {
-        withKubeConfig([credentialsId: 'kubernetes-config']) {
-        sh 'curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.20.5/bin/linux/amd64/kubectl"'  
-        sh 'chmod u+x ./kubectl'  
-        sh './kubectl get nodes'
-    }
+        withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: '20e67df2-a3a9-4794-9d26-79622ce2caa8', namespace: '', serverUrl: '') {
+    sh 'kubectl get nodes'
+}
 
     }
     
