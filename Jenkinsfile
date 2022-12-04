@@ -6,6 +6,7 @@ node() {
     
     stage('getnodes') {
         
+        sh 'chmod u+x ./kubectl'
         sh 'kubectl get nodes'
 
     }
