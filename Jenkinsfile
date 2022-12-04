@@ -5,8 +5,7 @@ node() {
     }
     
     stage('deploy') {
-        sh 'kubectl create -f deployment.yml'
-        sh 'kubectl create -f javaappservice.yml'
+        
         sh 'kubectl apply -f deployment.yml'
         sh 'kubectl apply -f javaappservice.yml'
         
